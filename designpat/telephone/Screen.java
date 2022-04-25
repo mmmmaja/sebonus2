@@ -6,9 +6,12 @@ package designpat.telephone;
  * System.out.println("hello");
  */
 public class Screen {
+
     private final PhoneModel model;
 
     public Screen(PhoneModel model) {
         this.model = model;
     }
+
+    // TODO create observers here
 }

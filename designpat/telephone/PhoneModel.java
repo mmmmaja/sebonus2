@@ -7,7 +7,10 @@ import java.util.List;
  * Store a phone number, digit-by-digit
  */
 public class PhoneModel {
-    private List<Integer> digits = new ArrayList<>();
+
+    // list of observers
+
+    private final List<Integer> digits = new ArrayList<>();
 
     public void addDigit(int newDigit) {
         digits.add(newDigit);
@@ -16,4 +19,9 @@ public class PhoneModel {
     public List<Integer> getDigits() {
         return digits;
     }
+
+    /**
+     * TODO
+     */
+    public void notifyObservers() {}
 }

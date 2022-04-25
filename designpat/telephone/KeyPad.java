@@ -7,6 +7,7 @@ import java.util.Random;
  * however, here we're just sending it fake digits.
  */
 public class KeyPad {
+
     private final PhoneModel model;
 
     public KeyPad(PhoneModel model) {
