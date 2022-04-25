@@ -38,6 +38,13 @@ public class Screen {
         this.observers.add(new Observer() {
             @Override
             public void update() {
+                if(model.isDone()) {
+                    String nums = "";
+                    for(int i = 0; i < model.getDigits().size(); i++) {
+                        nums += model.getDigits().get(i);
+                    }
+                    System.out.println("Now dialing " + nums);
+                }
                 // dial the number
             }
 

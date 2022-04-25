@@ -23,7 +23,7 @@ public class PhoneModel {
 
     public void notifyObservers() {
         for (Observer observer : this.observers) {
-            observer.notify();
+            observer.update();
         }
     }
 
@@ -33,5 +33,9 @@ public class PhoneModel {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public boolean isDone() {
+        return this.done;
     }
 }
