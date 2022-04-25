@@ -8,9 +8,9 @@ import java.util.List;
  */
 public class PhoneModel {
 
-    // list of observers
-
     private final List<Integer> digits = new ArrayList<>();
+    private ArrayList<Observer> observers;
+    private boolean done = false;
 
     public void addDigit(int newDigit) {
         digits.add(newDigit);
@@ -20,8 +20,18 @@ public class PhoneModel {
         return digits;
     }
 
-    /**
-     * TODO
-     */
-    public void notifyObservers() {}
+
+    public void notifyObservers() {
+        for (Observer observer : this.observers) {
+            observer.notify();
+        }
+    }
+
+    public void addObservers(ArrayList<Observer> observers) {
+        this.observers = observers;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 }

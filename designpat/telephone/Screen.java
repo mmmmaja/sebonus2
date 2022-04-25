@@ -24,6 +24,8 @@ public class Screen {
         this.observers.add(new Observer() {
             @Override
             public void update() {
+                int lastDigit = model.getDigits().get(model.getDigits().size() - 1);
+                System.out.println(lastDigit);
                 // print the last digit
             }
 
@@ -44,7 +46,10 @@ public class Screen {
                 return ObserverType.dialer;
             }
         });
+    }
 
+    public ArrayList<Observer> getObservers() {
+        return this.observers;
     }
 
 }

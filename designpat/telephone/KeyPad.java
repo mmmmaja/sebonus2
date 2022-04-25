@@ -15,12 +15,17 @@ public class KeyPad {
     }
 
     public void simulateKeyPresses(int numKeyPresses) {
+
         final int MAX_DIGIT = 10;
         Random rnd = new Random();
         for (int i = 0; i < numKeyPresses; i++) {
+            if (i == numKeyPresses - 1) {
+                model.setDone(true);
+            }
             int newDigit = rnd.nextInt(MAX_DIGIT);
             System.out.println("Pressing: " + newDigit);
             model.addDigit(newDigit);
+            model.notifyObservers();
         }
     }
 
