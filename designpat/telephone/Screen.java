@@ -1,3 +1,7 @@
+// SE_ASS2_Group5
+// Marian Chen - 6258052
+// Maja Gójska - 6274446
+
 package designpat.telephone;
 
 import java.util.ArrayList;
@@ -28,11 +32,6 @@ public class Screen {
                 System.out.println(lastDigit);
                 // print the last digit
             }
-
-            @Override
-            public ObserverType getObserverType() {
-                return ObserverType.digitPrinter;
-            }
         });
 
         this.observers.add(new Observer() {
@@ -46,11 +45,6 @@ public class Screen {
                     System.out.println("Now dialing " + nums);
                 }
                 // dial the number
-            }
-
-            @Override
-            public ObserverType getObserverType() {
-                return ObserverType.dialer;
             }
         });
     }
