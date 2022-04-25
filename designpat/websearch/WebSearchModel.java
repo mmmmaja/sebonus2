@@ -9,6 +9,7 @@ import java.util.List;
  * query.
  */
 public class WebSearchModel {
+
     private final File sourceFile;
     private final List<QueryObserver> observers = new ArrayList<>();
 
@@ -41,8 +42,8 @@ public class WebSearchModel {
     }
 
     private void notifyAllObservers(String line) {
-        for (QueryObserver obs : observers) {
-            obs.onQuery(line);
+        for (QueryObserver observer : observers) {
+            observer.onQuery(line);
         }
     }
 }
