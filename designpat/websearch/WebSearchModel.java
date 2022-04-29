@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * ! Observer pattern
  * Perform "web search" (from a file), notify the interested observers of each
  * query.
  */
@@ -60,5 +61,29 @@ public class WebSearchModel {
         for (QueryObserver observer : observers) {
             observer.onQuery(line);
         }
+    }
+
+
+    /**
+     * this is a REGISTRATION method
+     * TODO CHANGE the registration method to also accept a query filter policy object alongside it.
+     */
+    public void addQueryObserver(QueryFilterPolicyObject queryFilterPolicyObject) {
+        //observers.add(queryObserver);
+    }
+
+
+
+    public interface QueryFilterPolicyObject {
+
+        /**
+         * describes the interface for a policy object that will define a query filter
+         *
+         * @param query the line read from the file
+         * @return true if the model should notify the observer about this query
+         * returns false if the observer is not interested in this string (the query)
+         */
+        public boolean ifNotify(String query);
+
     }
 }

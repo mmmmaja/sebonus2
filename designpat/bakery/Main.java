@@ -9,6 +9,7 @@ package designpat.bakery;
  */
 public class Main {
     public static void main(String[] args) {
+
         // Create the order
         Order order = new Order();
         order.addCake(new ChocolateCake());

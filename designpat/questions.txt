@@ -1,0 +1,30 @@
+Which design pattern best meets each of these situations below, and why?
+
+
+1. A model that stores a collection of blocks. Blocks can be metal or wood; can be painted, sanded,
+or chrome plated; and can sometimes be radioactive or magnetized. What design pattern would
+allow the system to easily add new types of blocks without changing existing code and how?
+
+!Abstract Factory (?)
+
+2. A model for a game that represents a robot. The robot navigates a maze that has obstacles.
+While playing the game, the robot can be upgraded with new parts that change its abilities like
+speed, weapons, and shields. Which design principle allows the robot object to change its
+behavior at runtime in flexible ways and how?
+
+!Decorator (for sure)
+
+3. A model stores a phone number, and the UI (a keypad) which allows the user to enter digits one
+at a time. A different part of the UI wants to respond to each key being entered; however
+a) the two parts of the UI should be decoupled, and
+b) the model should be decoupled from the UI (model knows nothing about the UI).
+Which pattern would allow this and how?
+
+!Observer (?)
+
+4. A library supports recursively searching a directory for files. It allows the client code to provide it
+an object to filter the results. For each file which the library finds, it will ask the filter object if
+that file should be accepted or rejected. (See Java's FileFilter). Which design pattern would solve
+this problem, why and how?
+
+!Observer (for sure)
