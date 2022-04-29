@@ -13,6 +13,7 @@ public class Snooper {
         model.addQueryObserver(new WebSearchModel.QueryObserver() {
             @Override
             public void onQuery(String query) {
+                // If statements
                 System.out.println("Query: " + query);
             }
         });
