@@ -18,17 +18,22 @@ public class WebSearchModel {
     private final File sourceFile;
     private final List<QueryObserver> observers = new ArrayList<>();
 
-    public interface QueryObserver {
-        void onQuery(String query);
-    }
 
-    public interface PolicyObject {
+    public interface QueryFilterPolicyObject {
+
         /**
+         * describes the interface for a policy object that will define a query filter
+         *
          * @param query the line read from the file
-         * @return true if the model should notify the observer about this query,
-         *          otherwise false if the observer is not interested in this string (the query)
+         * @return true if the model should notify the observer about this query
+         * returns false if the observer is not interested in this string (the query)
          */
         public boolean ifNotify(String query);
+
+    }
+
+    public interface QueryObserver {
+        void onQuery(String query);
     }
 
     public WebSearchModel(File sourceFile) {
@@ -73,17 +78,4 @@ public class WebSearchModel {
     }
 
 
-
-    public interface QueryFilterPolicyObject {
-
-        /**
-         * describes the interface for a policy object that will define a query filter
-         *
-         * @param query the line read from the file
-         * @return true if the model should notify the observer about this query
-         * returns false if the observer is not interested in this string (the query)
-         */
-        public boolean ifNotify(String query);
-
-    }
 }
