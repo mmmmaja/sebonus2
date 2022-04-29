@@ -2,7 +2,7 @@ SE_ASS2_Group5
 Marian Chen - 6258052
 Maja Gójska - 6274446
 
-Part 1: Questions: Decide which Pattern
+Part 1: Decide which Pattern
 
 Which design pattern best meets each of these situations below, and why?
 
@@ -11,11 +11,14 @@ Which design pattern best meets each of these situations below, and why?
 or chrome plated; and can sometimes be radioactive or magnetized. What design pattern would
 allow the system to easily add new types of blocks without changing existing code and how?
 
-!Factory
-We have the family of simmilar object
+Design Pattern: Factory
 
-source:
-https://refactoring.guru/design-patterns/factory-method
+Here, there is a family of similar object (blocks), but these can be divided into subclasses depending on a specific characteristic
+(e.g., whether the block is metal, wooden, painted, sanded, etc.). As a result, all block types should implement a primary interface
+(Block), which helps each subclass (Metal, Wood, Painted, etc.) determine which methods to implement based on how these characteristics
+differ between types.
+
+Source: https://refactoring.guru/design-patterns/factory-method
 
 
 2. A model for a game that represents a robot. The robot navigates a maze that has obstacles.
@@ -23,7 +26,13 @@ While playing the game, the robot can be upgraded with new parts that change its
 speed, weapons, and shields. Which design principle allows the robot object to change its
 behavior at runtime in flexible ways and how?
 
-!Decorator
+Design Pattern: Decorator
+
+Here, the robot is able to get upgraded with new parts, but the remaining functions and features remain the same. In that case, the
+robot could be "decorated" with new parts that add onto the original functions. In this case, subclasses that implement a
+decoration interface will contain the essential methods that return the current features plus the newly added one(s).
+
+Source: https://refactoring.guru/design-patterns/decorator
 
 3. A model stores a phone number, and the UI (a keypad) which allows the user to enter digits one
 at a time. A different part of the UI wants to respond to each key being entered; however
@@ -31,11 +40,21 @@ a) the two parts of the UI should be decoupled, and
 b) the model should be decoupled from the UI (model knows nothing about the UI).
 Which pattern would allow this and how?
 
-!Observer
+Design Pattern: Observer
+
+In this case, an entered key would notify the other UI, which can then respond accordingly. In other words, several other UIs can
+implement an Observer interface, and all can then act accordingly whenever a key is entered on the keypad UI.
+
+Source: https://refactoring.guru/design-patterns/observer
 
 4. A library supports recursively searching a directory for files. It allows the client code to provide it
 an object to filter the results. For each file which the library finds, it will ask the filter object if
 that file should be accepted or rejected. (See Java's FileFilter). Which design pattern would solve
 this problem, why and how?
 
-!Strategy
+Design Pattern: Iterator
+
+Here, the library iterates through the files directory, asking the filter object if each file should be accepted or rejected. In this
+case, it accesses all the elements (files) to check which of all files are relevant.
+
+Source: https://refactoring.guru/design-patterns/strategy
