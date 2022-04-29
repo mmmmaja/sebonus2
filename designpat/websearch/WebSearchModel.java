@@ -22,15 +22,6 @@ public class WebSearchModel {
         void onQuery(String query);
     }
 
-    public interface PolicyObject {
-        /**
-         * @param query the line read from the file
-         * @return true if the model should notify the observer about this query,
-         *          otherwise false if the observer is not interested in this string (the query)
-         */
-        public boolean ifNotify(String query);
-    }
-
     public WebSearchModel(File sourceFile) {
         this.sourceFile = sourceFile;
     }
