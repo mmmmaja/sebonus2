@@ -14,10 +14,10 @@ public class Snooper {
     public Snooper(WebSearchModel model) {
         this.model = model;
 
+        // First observer
         model.addQueryObserver(new WebSearchModel.QueryObserver() {
             @Override
             public void onQuery(String query) {
-                // First observer
                 if(ifNotify(query))
                     System.out.println("Oh yes! " + query);
             }
@@ -30,10 +30,10 @@ public class Snooper {
             }
         });
 
+        // Second observer
         model.addQueryObserver(new WebSearchModel.QueryObserver() {
             @Override
             public void onQuery(String query) {
-                // Second observer
                 if(ifNotify(query))
                     System.out.println("So long.... " + query);
             }
@@ -44,9 +44,6 @@ public class Snooper {
                 else
                     return false;
             }
-        });
-
-
-        
+        }); 
     }
 }
