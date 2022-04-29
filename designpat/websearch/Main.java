@@ -16,5 +16,7 @@ public class Main {
 
         // Execute
         model.pretendToSearch();
+
+        // Marian's notes to self: queryobserver = animal; can/can't fly = different lines of interest, policy object
     }
 }
