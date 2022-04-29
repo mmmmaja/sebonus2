@@ -34,7 +34,7 @@ public class Snooper {
             @Override
             public void onQuery(String query) {
                 // Second observer
-                if(!ifNotify(query))
+                if(ifNotify(query))
                     System.out.println("So long.... " + query);
             }
             @Override
