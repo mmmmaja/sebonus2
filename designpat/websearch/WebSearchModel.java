@@ -20,7 +20,6 @@ public class WebSearchModel {
 
 
     public interface QueryFilterPolicyObject {
-
         /**
          * describes the interface for a policy object that will define a query filter
          *
@@ -32,7 +31,7 @@ public class WebSearchModel {
 
     }
 
-    public interface QueryObserver {
+    public interface QueryObserver extends QueryFilterPolicyObject {
         void onQuery(String query);
     }
 
@@ -57,8 +56,6 @@ public class WebSearchModel {
     }
 
     public void addQueryObserver(QueryObserver queryObserver) {
-        // TODO: Should also accept PolicyObject object
-        // Find a solution to store the Policy together with the Observer so that each observer can have its own attached filter. 
         observers.add(queryObserver);
     }
 
@@ -67,15 +64,4 @@ public class WebSearchModel {
             observer.onQuery(line);
         }
     }
-
-
-    /**
-     * this is a REGISTRATION method
-     * TODO CHANGE the registration method to also accept a query filter policy object alongside it.
-     */
-    public void addQueryObserver(QueryFilterPolicyObject queryFilterPolicyObject) {
-        //observers.add(queryObserver);
-    }
-
-
 }
